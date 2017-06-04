@@ -152,5 +152,10 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
-  return null;
+  for (let i = 0; i < squares.length; i++) {
+    if (squares[i] === null) {
+      return null;
+    }
+  }
+  return "No Winner";
 }
