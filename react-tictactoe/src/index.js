@@ -1,8 +1,8 @@
 /*
-Tic Tac Toe
+   Tic Tac Toe
 
-From intro tutorial from ReactJS: https://facebook.github.io/react/tutorial/tutorial.html
-*/
+   From intro tutorial from ReactJS: https://facebook.github.io/react/tutorial/tutorial.html
+ */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,7 +11,7 @@ import './index.css';
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
-    {props.value}
+      {props.value}
     </button>
   );
 }
@@ -20,29 +20,29 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
-      value={this.props.squares[i]}
-      onClick={() => this.props.onClick(i)}
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
       />);
   }
 
   render() {
     return (
       <div>
-      <div className="board-row">
-      {this.renderSquare(0)}
-      {this.renderSquare(1)}
-      {this.renderSquare(2)}
-      </div>
-      <div className="board-row">
-      {this.renderSquare(3)}
-      {this.renderSquare(4)}
-      {this.renderSquare(5)}
-      </div>
-      <div className="board-row">
-      {this.renderSquare(6)}
-      {this.renderSquare(7)}
-      {this.renderSquare(8)}
-      </div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
       </div>
     );
   }
@@ -93,11 +93,11 @@ class Game extends React.Component {
 
     const moves = history.map((step, move) => {
       const desc = move ?
-        'Move #' + move :
-        'Game start';
+                   'Move #' + move :
+                   'Game start';
       return (
         <li key={move}>
-        <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+          <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
         </li>
       );
     });
@@ -111,18 +111,18 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-      <div className="game-board">
-      <Board
-      squares={current.squares}
-      onClick={(i) => this.handleClick(i)}
-      />
-      </div>
-      <div className="game-info">
-      <div>{status}</div>
-      <h3>History</h3>
-      <p>Click on a history item to go back.</p>
-      <ol>{moves}</ol>
-      </div>
+        <div className="game-board">
+          <Board
+            squares={current.squares}
+            onClick={(i) => this.handleClick(i)}
+          />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <h3>History</h3>
+          <p>Click on a history item to go back.</p>
+          <ol>{moves}</ol>
+        </div>
       </div>
     );
   }

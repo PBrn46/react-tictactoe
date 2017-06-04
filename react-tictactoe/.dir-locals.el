@@ -1,5 +1,0 @@
-((nil . ((mode . electric-pair)
-         (indent-tabs-mode . nil)
-         (js-indent-level . 2)
-         (js-jsx-indent-level . 2)
-         )))
